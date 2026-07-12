@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Data Augmentation for L2 English Speaking Assessment using TTS</title>
+
+<style>
+
+body {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+}
+
+.example {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.box {
+    border: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.audio-box {
+    text-align: center;
+}
+
+.synthetic {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 28px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.text-block {
+    white-space: pre-wrap;
+}
+
+audio {
+    width: 100%;
+}
+
+.level-title {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Data Augmentation for L2 English Speaking Assessment using TTS</h1>
+
+<p>
+This repo contains some L2 synthetic examples from the experiments described in the paper "Data Augmentation for L2 English Speaking Assessment using TTS" submitted to SLT 2026.
+    Specifically, the examples below are generated using the matching strategy called <i>Matched</i><sub>CEFR</sub>+<i>Speechify</i> in the paper. First, we use GPT-4.1 to transform a given learner's written response into a spoken-style learner transcript. Subsequently, we match this <i>speechified</i> written response with a different learner's voice sharing the same CEFR level and use a TTS/voice-cloning system to generate synthetic learner speech.
+    We present examples for the A2, B2, and C2 levels. For each level, we report the original audio reference, its manual transcription, the original text reference, the <i>speechified</i> reference, and, finally, the synthetic response obtained with TTS/voice-cloning.
+</p>
+
+<!-- ===================== A2 ===================== -->
+<div class="example">
+
+<div class="level-title">A2</div>
+
+<div class="grid">
+
+    <div class="box audio-box">
+        <h3>Real Spoken (Learner ID: ES_A2_24_17_3_JMR)</h3>
+        <audio controls>
+            <source src="real_audio/ES_SP_A2_24_17_3_JMR_real.wav" type="audio/wav">
+        </audio>
+        <h3>Manual transcription</h3>
+        <div class="text-block">
+        hello i am going to talk about a film called the shawshank redemption the film is about a one man who is a banker and and one day that man discover that his wife has a relationship with another man he at first want to to kill them the the wife and the other time but at the last time he decide not to do the problem is some some days later because the bodies of the the bodies of his wife and his and the the other man appear dead killed and he goes to the jail to to a prison he he don't he don't do anything so the problem is that in the prison our protagonist meet with another man who is morgan freeman the the actor is morgan freeman the name of the character i don't know the thin is that that man who became his friend helps him to to deal with the problems of the of the prison of course in the prison we have some home people who is there and you know all the stories of of them and know some things of the prison the good things the bad things well good good things in the prison there are not so only bad things and he he don't commit the crime is difficult at the end morgan freeman the the man thinks a plan to help him in the film because is is not the real the real killer of that and the film is about the plan about his life in the prison and about everything and it's very good because the the actors are very good and the the soundtrack the the plot and everything is good so it's a very good film
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Real Written (Learner ID: ES_A2_26_3_14_SM)</h3>
+        <div class="text-block">
+        IN THIS VIDEO I COULD WATCH A FUNNY FILM OF FUNNY ACTOR AS CHARLES CHAPLIN. IN THE VIDEO CHAPLIN FOUND A CHILD BETWEEN GARBAGE IN STREET WHEN A POLICEMAN SAW HIM LEAVING THE BABY ON THE STREET BEHIND GARBAGE, SO CHAPLIN PICKED UP THE CHILD AGAIN AND TOOK HIM WITH HIM. AFTER CHAPLIN WILL TRY TO PUT  THE CHILD INSIDE THE BABY´S CAR OF A LADY BUT SHE CHATCHES HIM AND GIVES A LIFT WITH UMBRELLA. SO FINALLY CHAPLIN FOUND A LETTER INSIDE THE BABY´S BLANKET THAT SAYS: "PLEASE LOVE AND CARE FOR THIS ORPHAN CHILD".
+        </div>
+
+        <hr>
+
+        <h3>Speechified Written</h3>
+        <div class="text-block">
+        Um, in this video, uh, I could, I could watch a funny film, uh, with—by a funny actor, um, as Charles Chaplin. Uh, in the video, Chaplin, um, he found a child, uh, between, uh, garbage in the street. Uh, when a policeman, uh, he saw him, uh, leaving the baby, um, on the street, uh, behind the garbage, so, um, Chaplin, uh, picked up the child again, uh, and he took him with—uh, with him. Uh, after, Chaplin will try to, uh, put the child inside the baby’s car—uh, the baby’s car of a lady, um, but she catches him, uh, and, uh, gives a lift with, um, umbrella. Uh, so, so finally, um, Chaplin found a letter inside the baby’s, uh, blanket, and it, it says, uh, “Please love and care for this orphan child.” Um, I think that is all, uh, what happen in the video.
+        </div>
+    </div>
+
+</div>
+
+<div class="synthetic">
+    <div class="arrow">↓ Synthetic ↓</div>
+    <audio controls>
+        <source src="synth_audio/ES_SP_A2_24_17_3_JMR_synth.wav" type="audio/wav">
+    </audio>
+</div>
+
+</div>
+
+<!-- ===================== B2 ===================== -->
+<div class="example">
+
+<div class="level-title">B2</div>
+
+<div class="grid">
+
+    <div class="box audio-box">
+        <h3>Real Spoken (Learner ID: GR_B2_19_7_14_ΒΑ)</h3>
+        <audio controls>
+            <source src="real_audio/GR_SP_B2_19_7_14_ΒΑ_real.wav" type="audio/wav">
+        </audio>
+        <h3>Manual transcription</h3>
+        <div class="text-block">
+        one day charles chaplin the main character of this video while he was walking in a street he found a little baby being on its own when a woman passed by with her child in the baby carriage he gave her the newborn just because he thought that maybe she dropped it accidentally but of course that baby wasn't hers and then he proceeded to leave the kid exactly where he found it however a policeman noticed him and he immediately took back the baby and while he was walking with the newborn child in his hands he saw a stranger and he gave it to him without asking and in his turn of course the stranger the stranger tried to get rid of the baby and when no o no one was looking around he put it in the baby carriage and he left then the woman saw again two babies instead of her one child and when charles chaplin passed by she thought that he did it and suddenly the police officer comes around and charles was forced to take back the baby because they thought that he abandoned it again and he sat in the edge of a pave of a pavement disappointed and all of a sudden he found a little card and someone had written please love and care for this orphan child so the video ends with charlie looking the baby really happy in his hands and realizing why the baby was all alone all this time
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Real Written (Learner ID: DE_B2_18_8_13_LD)</h3>
+        <div class="text-block">
+        One day, there was a happy little boy that lived together with his puppy and a frog in a jar. He was content to be able to spend his evening together with his pets when he decided to go to bed. Suddenly, in the middle of the night the frog jumped out of his jar and run away. The next morning the little boy woke up and saw what happened. He was sad and missed his frog so that he decided to go and search him. The boy and his puppy got up and went to the forrest, searching and shouting for his frog to come back. They climed trees and stones to see where his frog could be, yet unfortunately they did not find him. Suddenly a deer appeared and took the boy onto his back and stopped immediately in front of a lake. That's why they boy fell into it. Soaked and sad the boy and his puppy climbed out of the lake. They were still thinking about the frog when a whole frog family appeared right beside them. The boy smiled and got really excited because his pet frog was amongst them. He took his frog and went home waving his newfound friends, the frog family.
+        </div>
+
+        <hr>
+
+        <h3>Speechified Written</h3>
+        <div class="text-block">
+        Uh, okay, so, um… there is—there was, um, one day, a happy little boy, yeah, and he lived—he lived together with his puppy and, uh, also a frog. The frog was… in a jar, I think. And, um, the boy, he was content, like, he was happy ’cause he could—he could spend, um, his evening together with his pets. And then, uh, when he decided to go, um, to bed, yeah. So… so then, suddenly, in the—like, in the middle of the night, the frog, it jump out of his jar and—uh, and, uh, run away. Next morning, um, when the little boy woke up, he saw, uh, what happened. And he was—yeah, he was sad and, uh, he miss his frog, so that he decided to, um, go and search him. So the boy and the puppy, uh, they got up and went to the… to the forest, searching, uh, and shouting for his frog to come back. Um, they—yeah, they climbed trees and—um, and stones to see, uh, maybe where his frog could be, but, uh, unfortunately, they did not find him. But then, uh, suddenly a deer, uh, appeared and, uh, took the boy—like, he took the boy onto his back and, uh, he stopped immediately in front of, uh, a lake. Um, that’s why, um, the boy falled into it, uh, into the lake. Uh, then, like, soaked and, uh, sad, the boy and his puppy, they, um, they climbed out of the lake. Um, they—they were still thinking about, uh, about the frog, you know, when—when, like, a whole frog family—uh, they, they appeared right beside—just beside them. Uh, then the boy, he… yeah, he smiled and got really, uh, really excited because his pet frog was—uh, was among them. Uh, he took his frog and, um, yeah, and went home, uh, waving his, um, newfound friends, the frog family.
+        </div>
+    </div>
+
+</div>
+
+<div class="synthetic">
+    <div class="arrow">↓ Synthetic ↓</div>
+    <audio controls>
+        <source src="synth_audio/GR_SP_B2_19_7_14_ΒΑ_synth.wav" type="audio/wav">
+    </audio>
+</div>
+
+</div>
+
+<!-- ===================== C2 ===================== -->
+<div class="example">
+
+<div class="level-title">C2</div>
+
+<div class="grid">
+
+    <div class="box audio-box">
+        <h3>Real Spoken (Learner ID: DE_C2_20_10_14_VW)</h3>
+        <audio controls>
+            <source src="real_audio/DE_SP_C2_20_10_14_VW_real.wav" type="audio/wav">
+        </audio>
+        <h3>Manual transcription</h3>
+        <div class="text-block">
+        in the video you see a man walking down the street and some debris is falling onto his head some stones from windows of the houses surrounding him and he stops to light a cigarette ‘n’ when he’s standing there smoking he notices a child that has been left at the corner of a house and he picks it up he then continues walking with the child and places it in a trolley of a woman that has already a child in it and and then he leaves no he doesn’t leave the woman the no the woman notices that he tries to put a child in her trolley and hands the child back to her very angrily back to him very angrily and he then takes the child and tries to put it down at the place where he found it originally and but he notices that a police officer saw him try leaving the child and abandoning it so he picks it up again and gives it to a man who is also walking down the street this man then tries to put it back in the trolley of the woman and as as he does so he doesn’t get noticed by the woman who’s currently in a shop and he leaves and then a few minutes later the man passes the woman again so the original man passes the woman again and he passes the trolley just as the woman leaves the store and she notices him and automatically assumed that he was the one that again tried to put a child into her trolley and beats him up with her umbrella and then he takes the child again and sits down at the at the corner of the street and takes a closer look at the child and then he notices that there’s a piece of paper within the child’s clothes that reads please love and care for this orphan child
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Real Written (Learner ID: EN_20_14_AB)</h3>
+        <div class="text-block">
+        This video was about a man who found a orphaned baby next to the dumpster and did not understand what that meant. He Saw a woman with a large stroller and presumed that she had forgotten the baby. This shows that he may not have been able to pick up the social cues. The woman however, upon placement of the orphaned child in her stroller she was upset because she did not want to have to care for another baby. Thus, the man put the baby back where he found it, however, due to his poor luck there was a police man right behind him so man couldn\'t just place the babe back where he found it and therefore he gave the baby off to someone else. But that man did not want the baby and so the man was stuck with the orphaned baby. He finally sat down to contemplate the other options that he had and realized there was a note in the clothes of the baby. The note read "please love and care for this orphaned baby." And he went off to do just that (it is assumed).
+        </div>
+
+        <hr>
+
+        <h3>Speechified Written</h3>
+        <div class="text-block">
+        Um, okay, so this video, uh, it was about a man who—who found, yeah, an orphaned baby, uh, next to a dumpster. And, um, I think he didn’t really understand what that meant, like, what—what it means when you see a child like that. Uh, he—then he saw, um, there is a woman with, like, a large stroller, and he just, uh, presumed that, uh, she had forgotten the baby, so, um, he brings the baby to her. But, uh, I think this shows, maybe, he—he was not really able to, uh, understand the social cues, or yeah—the typical behaviour. Uh, so when the man, uh, put the orphaned baby in her stroller, uh, the woman, actually, she was quite upset because, uh, she didn’t want to have to care for another baby, uh, I think. So, um, the man then, uh, decided to put the baby back where he found it. But, um, unfortunately—yeah, because of, uh, bad luck or something, there was a policeman right behind him. So the man couldn’t just, uh, put the baby back, and, um… yeah, so he—he tried to give the baby to someone else. But, uh, that man also, he didn’t want the baby, so, um, yeah, the first man was stuck with this orphaned baby. Uh, then he, I think, he finally sat down and was trying to, uh, think about other options—yeah, to contemplate, um, what to do. And then, um—oh, he realised, um, there was a note, I think, in the baby’s clothes. The note was saying, uh, something like, “please love and care for this orphaned baby.” So, um, then he—he went off to do that, or at least, um, I think, it is assumed that, uh, he will go and do exactly that.
+        </div>
+    </div>
+
+</div>
+
+<div class="synthetic">
+    <div class="arrow">↓ Synthetic ↓</div>
+    <audio controls>
+        <source src="synth_audio/DE_SP_C2_20_10_14_VW_synth.wav" type="audio/wav">
+    </audio>
+</div>
+
+</div>
+
+</body>
+</html>
